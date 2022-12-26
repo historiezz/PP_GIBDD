@@ -1,0 +1,70 @@
+﻿<Window x:Class="PP_GIBDD.Window.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PP_GIBDD.Window"
+        mc:Ignorable="d"
+        Title="Authorization" Height="450" Width="400" MaxHeight="450" MaxWidth="450" MinHeight="450" MinWidth="400">
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontStyle" Value="Normal"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontStyle" Value="Normal"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="Background" Value="#e0a9af"/>
+            <Setter Property="MinWidth" Value="120"></Setter>
+            <Setter Property="MaxHeight" Value="100"></Setter>
+            <Setter Property="MaxWidth" Value="240"></Setter>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontStyle" Value="Normal"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="MinWidth" Value="120"></Setter>
+            <Setter Property="Margin" Value="10 20 20 20"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#b5d5ca">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="23*"></RowDefinition>
+            <RowDefinition Height="35*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/gibdd_logo.png" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center"  />
+        
+        <TextBlock Grid.ColumnSpan="2" Style="{StaticResource TextBlockStyle}" Height="24" Width="116">Авторизация</TextBlock>
+
+        <TextBlock Style="{StaticResource TextBlockStyle}" Grid.Row="1" Height="24" Width="58">Логин:</TextBlock>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Grid.Row="2" Height="24" Width="72">Пароль:</TextBlock>
+
+        <TextBox Name="LoginBox" MaxLength="100" Style="{StaticResource TextBoxStyle}" Grid.Row="1" Grid.Column="1" Height="50" Margin="10,0,20,0"></TextBox>
+        <TextBox Name="PasswordBox" MaxLength="100"  Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1" Height="50" Margin="10,0,20,0"></TextBox>
+
+        <Button Name="EnterBtn" Click="EnterBtn_Click" Grid.Row="3" Grid.Column="1" Style="{StaticResource ButtonStyle}" Height="50" Width="120">Войти</Button>
+        <Button Name="RegBtn" Click="RegBtn_Click" Grid.Row="3" Style="{StaticResource ButtonStyle}" Height="50" Width="120">Регистрация</Button>
+    </Grid>
+</Window>
+

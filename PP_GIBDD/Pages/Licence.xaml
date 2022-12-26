@@ -1,0 +1,24 @@
+﻿<Page x:Class="PP_GIBDD.Pages.Licence"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PP_GIBDD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Licence">
+    <Grid>
+        <DataGrid Name="DataGridLicence" IsReadOnly="true" AutoGenerateColumns="False" >
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}"/>
+            <DataGridTextColumn Header="Дата начала" Width="*" Binding="{Binding LicenceDate}"/>
+            <DataGridTextColumn Header="Дата окончания" Width="*" Binding="{Binding ExpireDate}"/>
+            <DataGridTextColumn Header="Категории" Width="*" Binding="{Binding Categories}"/>
+            <DataGridTextColumn Header="Серия лицензии" Width="*" Binding="{Binding LicenceSeries}"/>
+            <DataGridTextColumn Header="Номер лиценщии" Width="*" Binding="{Binding LicenceNumber}"/>
+            <DataGridTextColumn Header="Имя водителя" Width="*" Binding="{Binding IdDriver}"/>
+            <DataGridTextColumn Header="Статус лицензии" Width="*" Binding="{Binding IdStatus}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    </Grid>
+</Page>

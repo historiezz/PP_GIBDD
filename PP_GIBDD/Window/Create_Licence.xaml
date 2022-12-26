@@ -1,0 +1,77 @@
+﻿<Window x:Class="PP_GIBDD.Window.Create_Licence"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PP_GIBDD.Window"
+        mc:Ignorable="d"
+        Title="Create_Licence" Height="550" Width="500" MinHeight="550" MaxHeight="550" MinWidth="500" MaxWidth="550">
+    <Window.Resources>
+        <Style x:Key="blackStyle" TargetType="Button">
+        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="MinWidth" Value="140"></Setter>
+        <Setter Property="MinHeight" Value="50"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+    </Style>
+
+    <Style x:Key="SimpleText" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Margin" Value="30 0 0 0"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+    </Style>
+
+    <Style x:Key="SimpleTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Width" Value="Auto"></Setter>
+        <Setter Property="Height" Value="Auto"></Setter>
+    </Style>
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource SimpleText}">Идентификатор:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource SimpleText}">Дата создания:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource SimpleText}">Дата окончания:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource SimpleText}">Категории:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource SimpleText}">Серия лицензии:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource SimpleText}">Номер лицензии:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource SimpleText}">Имя водителя:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" Style="{StaticResource SimpleText}">Статус лицензии:</TextBlock>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Name="IdBox" Style="{StaticResource SimpleTextBox}"></TextBox>
+        <DatePicker FontSize="15" Name="CreateDp" IsDropDownOpen="True" SelectedDateFormat="Short" Grid.Row="1" Grid.Column="1"/>
+        <DatePicker FontSize="15" Name="EndDp" IsDropDownOpen="True" SelectedDateFormat="Short" Grid.Row="2" Grid.Column="1"/>
+        <TextBox Grid.Column="1" MaxLength="100" Grid.Row="3" Name="CategoryBox" Style="{StaticResource SimpleTextBox}"></TextBox>
+        <TextBox PreviewTextInput="LicenceSerialBox_PreviewTextInput" Grid.Column="1" MaxLength="4" Grid.Row="4" Name="LicenceSerialBox" Style="{StaticResource SimpleTextBox}"></TextBox>
+        <TextBox PreviewTextInput="LicenceNumberBox_PreviewTextInput" Grid.Column="1" MaxLength="6" Grid.Row="5" Name="LicenceNumberBox" Style="{StaticResource SimpleTextBox}"></TextBox>
+
+        <ComboBox Grid.Column="1" Grid.Row="6" DisplayMemberPath="MiddleName" Name="NameDriverComBox"></ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="7" DisplayMemberPath="Type" Name="StatusLicenceComBox"></ComboBox>
+
+        <Button x:Name="CreateClub" Click="CreateClub_Click" Style="{StaticResource blackStyle}" Grid.Column="1" Grid.Row="8">Добавить</Button>
+        <Button x:Name="BackBtn" Click="BackBtn_Click" Style="{StaticResource blackStyle}" Grid.Column="0" Grid.Row="8">Назад</Button>
+
+    </Grid>
+</Window>
